@@ -1,4 +1,4 @@
-# Sunnyyoung Repo
+# homebrew-repo
 
 ## How do I install these formulae?
 
