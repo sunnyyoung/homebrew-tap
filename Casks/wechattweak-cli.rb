@@ -8,7 +8,6 @@ cask "wechattweak-cli" do
   homepage "https://tweaks.app"
 
   binary "wechattweak-cli"
-  depends_on macos: ">= :sierra"
 
   postflight do
     system "xattr", "-d", "com.apple.quarantine", "#{HOMEBREW_PREFIX}/bin/wechattweak-cli"
