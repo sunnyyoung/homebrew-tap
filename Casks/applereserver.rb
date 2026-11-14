@@ -7,6 +7,8 @@ cask "applereserver" do
   desc "Apple 官方预约命令行监控助手"
   homepage "https://github.com/Sunnyyoung/AppleReserver"
 
+  deprecate! date: "2025-09-25", because: :unmaintained
+
   binary "applereserver"
   depends_on :macos
 

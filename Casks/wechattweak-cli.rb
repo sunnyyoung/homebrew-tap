@@ -7,6 +7,8 @@ cask "wechattweak-cli" do
   desc "A command line utility to work with WeChatTweak-macOS."
   homepage "https://tweaks.app"
 
+  deprecate! date: "2025-12-05", because: :discontinued, replacement_formula: "sunnyyoung/tap/wechattweak"
+
   binary "wechattweak-cli"
   depends_on :macos
 
