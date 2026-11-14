@@ -8,9 +8,11 @@ cask "applereserver" do
   homepage "https://github.com/Sunnyyoung/AppleReserver"
 
   binary "applereserver"
-  depends_on macos: ">= :el_capitan"
+  depends_on :macos
 
-  postflight do
-    system "xattr", "-d", "com.apple.quarantine", "#{HOMEBREW_PREFIX}/bin/applereserver"
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-d", "com.apple.quarantine", "{{HOMEBREW_PREFIX}}/bin/applereserver"],
+        must_succeed: false
   end
 end
