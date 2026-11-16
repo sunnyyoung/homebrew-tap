@@ -1,12 +1,12 @@
 class Untcc < Formula
   desc "In-memory TCC bypass for macOS"
   homepage "https://github.com/sunnyyoung/untcc"
-  url "https://github.com/sunnyyoung/untcc/releases/download/1.0/untcc"
-  sha256 "782b3ce7a7a9636fec1f0d3afd7398a818de940d3f5b117630d50c50e48b2948"
+  url "https://github.com/sunnyyoung/untcc/releases/download/1.1/untcc"
+  sha256 "2e8974d28f30d6bc8ee584dcae1d604489f53beedbc2a72d61fe6036d08137bc"
   license "MIT"
 
   depends_on arch: :arm64
-  depends_on macos: :tahoe
+  depends_on macos: :sequoia
 
   def install
     bin.install "untcc"
@@ -24,6 +24,7 @@ class Untcc < Formula
   def caveats
     <<~EOS
       Requires root and disabled SIP.
+      Required on macOS 15: `sudo nvram boot-args="-arm64e_preview_abi"`
       Stopping the service leaves existing hooks active until tccd restarts.
       Injection errors stop the service; inspect the log before restarting it.
     EOS
